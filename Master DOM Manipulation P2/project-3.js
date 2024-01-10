@@ -11,10 +11,9 @@
 // };
 
 
-
-let qns = document.querySelectorAll('.content-container');
-for (let i=0; i<qns.length; i++){
-    qns[i].addEventListener('click', function(e){
+let accordions = document.querySelectorAll('.content-container');
+for (let i=0; i<accordions.length; i++){
+    accordions[i].addEventListener('click', function(e){
         this.classList.toggle('active');
     })
 }
