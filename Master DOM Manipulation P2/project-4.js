@@ -1,85 +1,47 @@
-//  Variables for buttons
-
-const startStopBtn = document.querySelector('#startStopBtn');
+const btn = document.querySelector('#startStopBtn');
 const resetBtn = document.querySelector('#resetBtn');
-
-// Variables for time values
-
-let seconds = 0;
-let minutes = 0;
-let hours = 0;
-
-// Variables for leading zero
-
-let leadingSeconds = 0;
-let leadingMinutes = 0;
-let leadingHours = 0;
-
-// Vairables for set interval & timerstatus
-
-let timerInterval = null;
-let timerStatus = "stopped";
-
-// Stop Watch Function
-
-function stopWatch() {
+let time = document.querySelector('#timer');
+let timeElapsed;
 
 
-    seconds++
+let counter = 0;
+let started = false;
 
-    if(seconds / 60 === 1){
-        seconds = 0;
-        minutes ++;
+resetBtn.addEventListener('click', ()=>{
+    resetCounter();
+})
 
-        if(minutes / 60 ===1) {
-            minutes = 0;
-            hours++
-        }
+btn.addEventListener('click', ()=>{
+    if (!started){
+        started = true;
+        timeElapsed = window.setInterval(increment, 1000);
+        btn.innerHTML = '<i class="fa-solid fa-pause" id="pause"></i>'
     }
-
-    if(seconds < 10) {
-        leadingSeconds = "0" + seconds.toString();
-    } else {
-        leadingSeconds = seconds;
+    else{
+        started = false;
+        window.clearInterval(timeElapsed);
+        btn.innerHTML = '<i class="fa-solid fa-play" id="play"></i>'
     }
-    if(minutes < 10) {
-        leadingMinutes = "0" + minutes.toString();
-    } else {
-        leadingMinutes = minutes;
-    }
-    if(hours < 10) {
-        leadingHours = "0" + hours.toString();
-    } else {
-        leadingHours = hours;
-    }
-
-    let displayTimer = document.getElementById('timer').innerText = leadingHours + ":" + leadingMinutes + ":" + leadingSeconds;
+})
+function increment(){
+    counter++;
+    time.innerText = formatTime(counter);
 }
 
-//
+function formatTime(counter){
+    let hrs = Math.floor(counter / 3600);
+    let mins = Math.floor((counter % 3600) / 60);
+    let secs = Math.floor(((counter % 3600) % 60));
 
-startStopBtn.addEventListener('click', function(){
+    hrs = String(hrs).padStart(2, '0');
+    mins = String(mins).padStart(2, '0');
+    secs = String(secs).padStart(2, '0');
 
-    if(timerStatus === "stopped") {
-        timerInterval =  window.setInterval(stopWatch, 1000);
-        document.getElementById('startStopBtn').innerHTML = `<i class="fa-solid fa-pause" id="pause"></i>`;
-        timerStatus = "started";
-    } else {
-        window.clearInterval(timerInterval);
-        document.getElementById('startStopBtn').innerHTML = `<i class="fa-solid fa-play" id="play"></i>`;
-        timerStatus = "stopped";
-    }
+    return `${hrs}:${mins}:${secs}`;
+}
 
-});
-
-resetBtn.addEventListener('click', function(){
-
-
-    window.clearInterval(timerInterval);
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-
-    document.getElementById('timer').innerHTML = "00:00:00";
-
-});
+let resetCounter = () => {
+    counter = 0;
+    started = false;
+    time.innerText = '00:00:00';
+}

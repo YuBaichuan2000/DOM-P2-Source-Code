@@ -166,7 +166,7 @@ background-color: rgba(0,0,0, .2);
 
    #################################  */
 
-body {
+/* body {
     background: url(img/project-3.jpg) no-repeat center center/cover;
     height: 100vh;
     display: flex;
@@ -212,11 +212,11 @@ body {
     overflow: hidden;
     transition: .5s;
 
-}
+} */
 
 /* Javascript Styling Link */
 
-.accordion .content-container.active .answer {
+/* .accordion .content-container.active .answer {
     height: 150px;
 }
 
@@ -229,7 +229,7 @@ body {
     content: '-';
     font-size: 30px;
     transition: .5s;
-}
+} */
 
 
 /* #################################
@@ -238,57 +238,58 @@ body {
 
    #################################  */
 
-/* 
 
-   body {
-    height: 100vh;
-    background: url(img/project-4.jpg) no-repeat center top / cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   }
 
-   .container {
-    width: 60%;
-    height: 250px;
-    background-color: #fff;
-    border-radius: 30px;
-    box-shadow:  0 0 3px;
-   }
+body {
+height: 100vh;
+background: url(img/project-4.jpg) no-repeat center top / cover;
+display: flex;
+justify-content: center;
+align-items: center;
+}
 
-   #timer {
-    width: 100%;
-    font-size: 72px;
-    text-align: center;
-    margin: 0px auto;
-    padding: 35px;
-   }
+.container {
+width: 60%;
+height: 250px;
+background-color: #fff;
+border-radius: 30px;
+box-shadow:  0 0 3px;
+}
 
-   .buttons {
-    text-align: center;
-   }
+#timer {
+width: 100%;
+font-size: 72px;
+text-align: center;
+margin: 0px auto;
+padding: 35px;
+}
 
-   button {
-    margin: 0 10px;
-    border: none;
-   }
+.buttons{
+text-align: center;
+}
 
-   button i {
-    font-size: 2rem;
-    padding: 10px;
-    color: #fff;
-    width: 50px;
-   }
 
-   #play {
-    background-color: green;
-   }
-   #pause {
-    background-color: orange;
-   }
-   #reset {
-    background-color: red;
-   } */
+button {
+margin: 0 10px;
+border: none;
+}
+
+button i {
+font-size: 2rem;
+padding: 10px;
+color: #fff;
+width: 50px;
+}
+
+#play {
+background-color: green;
+}
+#pause {
+background-color: orange;
+}
+#reset {
+background-color: red;
+}
 
 /* #################################
 
@@ -297,7 +298,7 @@ body {
    #################################  */
 
 
-body {
+/* body {
     height: 100vh;
     background: url(img/project-5.jpg) no-repeat center center/cover;
 
@@ -343,12 +344,12 @@ input {
 #add-task:hover {
     background-color: green;
     color: #fff;
-}
+} */
 
 
 /* Styling for task which get added to to-do list */
 
-.task {
+/* .task {
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
@@ -398,4 +399,4 @@ input {
 .task .deleteTask:hover {
     background-color: red;
     color: #fff;
-}
+} */
